@@ -35,9 +35,6 @@
     # Define name staging schema
     staging_bank_schema: 'staging_bank_schema'
 
-    # Define name intermediate schema
-    intermediate_bank_schema: 'intermediate_bank_schema'
-
     # Define name marts schema
     marts_bank_schema: 'marts_bank_schema'
 
@@ -156,17 +153,6 @@
     dbt_snowflake_dw:
       # Config indicated by + and applies to all files under models/staging/
       staging:
-        dimensions:
-          +materialized: table
-          snowflake-warehouse: dbt_bank_warehouse
-          tags: ['dimensions']
-        facts:
-          +materialized: table
-          snowflake-warehouse: dbt_bank_warehouse
-          tags: ['facts']
-
-      # Config indicated by + and applies to all files under models/intermediate/
-      intermediate:
         dimensions:
           +materialized: table
           snowflake-warehouse: dbt_bank_warehouse
