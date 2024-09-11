@@ -1,0 +1,188 @@
+
+  # Name your project! Project names should contain only lowercase characters
+  # and underscores. A good package name should reflect your organization's
+  # name or the intended use of these models
+  name: 'dbt_snowflake_dw'
+  version: '1.0.0'
+
+  # This setting configures which "profile" dbt uses for this project.
+  profile: 'dbt_snowflake_dw'
+
+  # These configurations specify where dbt should look for different types of files.
+  # The `model-paths` config, for example, states that models in this project can be
+  # found in the "models/" directory. You probably won't need to change these!
+  model-paths: ["models"]
+  analysis-paths: ["analyses"]
+  test-paths: ["tests"]
+  seed-paths: ["seeds"]
+  macro-paths: ["macros"]
+  snapshot-paths: ["snapshots"]
+
+  clean-targets:         # directories to be removed by `dbt clean`
+    - "target"
+    - "dbt_packages"
+
+
+  # Configuring models
+  # Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+  # In this example config, we tell dbt to build all models in the example/
+  # directory as views. These settings can be overridden in the individual model
+  # files using the `{{ config(...) }}` macro.
+
+  # Define Variables
+  vars:
+    # Define name staging schema
+    staging_bank_schema: 'staging_bank_schema'
+
+    # Define name intermediate schema
+    intermediate_bank_schema: 'intermediate_bank_schema'
+
+    # Define name marts schema
+    marts_bank_schema: 'marts_bank_schema'
+
+
+  # Configure seeds folder
+  seeds:
+    dbt_snowflake_dw:
+      dimensions:
+        # Configure dim_accounts.csv file
+        dim_accounts:
+          # +schema: raw_bank_schema
+          +column_types:
+            account_id: number(38,0)
+            account_number: number(38,0)
+            customer_id: number(38,0)
+            account_type: varchar(16777216)
+            account_balance: float
+            credit_score: number(38,0)
+          +quote_columns: true
+          +delimiter: ","
+
+        # Configure dim_channels.csv file
+        dim_channels:
+          # +schema: raw_bank_schema
+          +column_types:
+            channel_id: number(38,0)
+            channel_name: varchar(16777216)
+          +quote_columns: true
+          +delimiter: ","
+
+        # Configure dim_currencies.csv file
+        dim_currencies:
+          # +schema: raw_bank_schema
+          +column_types:
+            currency_id: number(38,0)
+            currency_code: varchar(16777216)
+            currency_name: varchar(16777216)
+          +quote_columns: true
+          +delimiter: ","
+
+        # Configure dim_customers.csv file
+        dim_customers:
+          # +schema: raw_bank_schema
+          +column_types:
+            customer_id: number(38,0)
+            first_name: varchar(16777216)
+            last_name: varchar(16777216)
+            email: varchar(16777216)
+            address: varchar(16777216)
+            city: varchar(16777216)
+            state: varchar(16777216)
+            postal_code: number(38,0)
+            phone_number: varchar(16777216)
+          +quote_columns: true
+          +delimiter: ","
+
+        # Configure dim_dates.csv file
+        dim_dates:
+          # +schema: raw_bank_schema
+          +column_types:
+            date_id: number(38,0)
+            date: date
+            day: number(38,0)
+            month: number(38,0)
+            year: number(38,0)
+            quarter: number(38,0)
+            weekday: number(38,0)
+          +quote_columns: true
+          +delimiter: ","
+
+        # Configure dim_investment_types.csv file
+        dim_investment_types:
+          # +schema: raw_bank_schema
+          +column_types:
+            investment_type_id: number(38,0)
+            investment_type_name: varchar(16777216)
+          +quote_columns: true
+          +delimiter: ","
+
+        # Configure dim_loans.csv file
+        dim_loans:
+          # +schema: raw_bank_schema
+          +column_types:
+            loan_id: number(38,0)
+            loan_type: varchar(16777216)
+            loan_amount: float
+            interest_rate: float
+          +quote_columns: true
+          +delimiter: ","
+
+        # Configure dim_locations.csv file
+        dim_locations:
+          # +schema: raw_bank_schema
+          +column_types:
+            location_id: number(38,0)
+            address: varchar(16777216)
+            city: varchar(16777216)
+            state: varchar(16777216)
+            country: varchar(16777216)
+            postal_code: number(38,0)
+          +quote_columns: true
+          +delimiter: ","
+
+        # Configure dim_transaction_types.csv file
+        dim_transaction_types:
+          # +schema: raw_bank_schema
+          +column_types:
+            transaction_type_id: number(38,0)
+            transaction_type_name: varchar(16777216)
+          +quote_columns: true
+          +delimiter: ","
+
+
+  # Configure models folder
+  models:
+    dbt_snowflake_dw:
+      # Config indicated by + and applies to all files under models/staging/
+      staging:
+        dimensions:
+          +materialized: table
+          snowflake-warehouse: dbt_bank_warehouse
+          tags: ['dimensions']
+        facts:
+          +materialized: table
+          snowflake-warehouse: dbt_bank_warehouse
+          tags: ['facts']
+
+      # Config indicated by + and applies to all files under models/intermediate/
+      intermediate:
+        dimensions:
+          +materialized: table
+          snowflake-warehouse: dbt_bank_warehouse
+          tags: ['dimensions']
+        facts:
+          +materialized: table
+          snowflake-warehouse: dbt_bank_warehouse
+          tags: ['facts']
+
+      # Config indicated by + and applies to all files under models/marts/
+      marts:
+        dimensions:
+          +materialized: table
+          snowflake-warehouse: dbt_bank_warehouse
+          tags: ['dimensions']
+        facts:
+          +materialized: table
+          snowflake-warehouse: dbt_bank_warehouse
+          tags: ['facts']

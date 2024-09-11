@@ -1,0 +1,40 @@
+# version: 2
+
+# sources:
+#   - name: intermediate_snowflake
+#     description: Financial data for the Moduck Bank
+#     database: dbt_bank_db
+#     schema: staging_bank_schema
+#     tables:
+#       - name: stg_dim_accounts
+#         description: Chứa thông tin về các loại tài khoản của các khách hàng, \
+#                      một khách hàng có thể có nhiều loại tài khoản khác nhau trong một ngân hàng sau khi đã được xử lý
+#       - name: stg_dim_channels
+#         description: Chứa thông tin về các kênh giao dịch của ngân hàng sau khi đã được xử lý
+#       - name: stg_dim_currencies
+#         description: Chứa thông tin về các loại tiền tệ lưu động trong ngân hàng sau khi đã được xử lý
+#       - name: stg_dim_customers
+#         description: Chứa thông tin về khách hàng của ngân hàng sau khi đã được xử lý
+#       - name: stg_dim_dates
+#         description: Chứa thông tin về ngày tháng mà khách hàng thực hiện một dịch vụ nào đó sau khi đã được xử lý
+#       - name: stg_dim_investment_types
+#         description: Chứa thông tin về các loại hình đầu tư của ngân hàng sau khi đã được xử lý
+#       - name: stg_dim_loans
+#         description: Chứa thông tin về các khoản vay của khách hàng trong ngân hàng sau khi đã được xử lý
+#       - name: stg_dim_locations
+#         description: Chứa thông tin về vị trí một giao dịch của khách hàng sau khi đã được xử lý
+#       - name: stg_dim_transaction_types
+#         description: Chứa thông tin về các kiểu giao dịch của ngân hàng sau khi đã được xử lý
+#       - name: stg_fact_customer_interactions
+#         description: Chứa thông tin cụ thể về các tương tác với dịch vụ của khách hàng sau khi đã được xử lý
+#       - name: stg_fact_daily_balances
+#         description: Chứa thông tin về số dư tài khoản trong một khoảng thời gian nhất định sau khi đã được xử lý
+#       - name: stg_fact_investments
+#         description: Chứa thông tin về cụ thể về các giao dịch đầu tư sau khi đã được xử lý
+#       - name: stg_fact_loan_payments
+#         description: Chứa thông tin về cụ thể về các khoản vay sau khi đã được xử lý
+#       - name: stg_fact_transactions
+#         description: Chứa thông tin cụ thể về một giao dịch của khách hàng sau khi đã được xử lý
+
+
+

@@ -1,0 +1,13 @@
+dbt_snowflake_dw:
+  outputs:
+    dev:
+      account: ynb77459.us-east-1
+      database: dbt_bank_db
+      password: Thang@2003
+      role: dbt_bank_role
+      schema: raw_bank_schema
+      threads: 10
+      type: snowflake
+      user: thangmaster2003
+      warehouse: "dbt_bank_warehouse"
+  target: dev

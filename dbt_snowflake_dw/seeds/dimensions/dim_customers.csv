@@ -1,0 +1,101 @@
+customer_id,first_name,last_name,email,address,city,state,postal_code,phone_number
+1,Jessica,Moyer,jessicamoyer@yahoo.com,2847 Donald Pine Apt. 346,South Lindsay,Pennsylvania,57355,001-473-380-0514x7835
+2,John,Reed,johnreed@gmail.com,38694 Moyer Causeway,South Thomasbury,Rhode Island,25816,(787)437-1503x905
+3,Elizabeth,Edwards,elizabethedwards@gmail.com,48409 Miller Centers,South Carolinefort,Maryland,82736,882-763-9219
+4,Edward,Marsh,edwardmarsh@hotmail.com,4961 Andrew Road,Port Joshuaburgh,Iowa,29417,001-902-964-1153x5890
+5,Brittney,Martinez,brittneymartinez@hotmail.com,0159 Lee Forge,New Christinashire,Maryland,44014,(965)942-2087
+6,Kristopher,Barnes,kristopherbarnes@hotmail.com,16403 Webb Skyway Apt. 117,Jessicachester,West Virginia,89989,+1-670-585-3624x1184
+7,Kiara,Callahan,kiaracallahan@hotmail.com,61870 Mendoza Dam Suite 893,West Crystalbury,Oklahoma,47570,898-489-2965x313
+8,Joseph,Miller,josephmiller@gmail.com,3252 Ronald Forks Apt. 359,Riverabury,Louisiana,82399,(281)362-7868
+9,Whitney,Rodriguez,whitneyrodriguez@yahoo.com,528 Ayala Ridge Suite 703,Lake David,Rhode Island,69406,5227307129
+10,Ashley,Gallegos,ashleygallegos@gmail.com,20332 Sabrina Glens Apt. 884,Lake Matthew,North Carolina,18310,6957433038
+11,Melissa,Norman,melissanorman@yahoo.com,3407 Jarvis Valleys,Tonyaberg,Maryland,85831,205.388.0238x429
+12,Christopher,Smith,christophersmith@gmail.com,747 Miller Knolls,Lake Jenniferland,Florida,31036,+1-686-974-9663x79526
+13,Corey,Johnson,coreyjohnson@gmail.com,75563 Collier Squares Suite 652,South Karenfurt,Kentucky,97861,8159507316
+14,Robert,Braun,robertbraun@hotmail.com,2769 Wagner Crescent Suite 813,Port Jared,California,27246,5696996070
+15,Jonathan,Hodges,jonathanhodges@hotmail.com,290 Cheryl Parkways Suite 042,Davisfort,Wisconsin,64535,774.394.6678x551
+16,Andrew,Parker,andrewparker@gmail.com,1019 Elizabeth Radial,Annafurt,South Dakota,41426,+1-607-888-9695x7772
+17,Andrew,Williams,andrewwilliams@yahoo.com,81858 Garcia Mission,West Anthony,Nevada,71049,483-696-1577x4079
+18,Richard,Long,richardlong@gmail.com,91574 Omar Manor Apt. 253,North Donna,Kansas,46247,281-435-2824x283
+19,Michael,Munoz,michaelmunoz@yahoo.com,452 Andrew Square Suite 778,Eugenefort,Montana,93669,+1-225-718-0348
+20,Joyce,Jacobs,joycejacobs@yahoo.com,6038 Matthew Ranch,Tammychester,Connecticut,35487,505.845.1136x957
+21,William,Griffin,williamgriffin@gmail.com,903 Craig Ridge Suite 509,Thompsontown,Texas,89850,001-715-593-6418x3342
+22,John,Kane,johnkane@hotmail.com,814 Crystal Run,Kimberlyland,Virginia,90590,+1-740-606-0687
+23,Melissa,Russo,melissarusso@hotmail.com,19055 Randy Spur,North Catherine,Missouri,31641,418.909.5502
+24,Anthony,Hodge,anthonyhodge@yahoo.com,6238 Craig Plaza Suite 621,Lake Sally,Alabama,41509,738.549.3369x53384
+25,Aaron,Mcdonald,aaronmcdonald@hotmail.com,886 Alyssa Point Suite 387,South Todd,Minnesota,50887,+1-895-838-6599x1763
+26,Courtney,Davis,courtneydavis@gmail.com,1152 Powers Cliffs,Lisaland,Kansas,43178,(978)959-9840x193
+27,William,Krueger,williamkrueger@hotmail.com,75588 Smith Drive Suite 620,New Holly,Illinois,24640,+1-846-797-9848x192
+28,Stephanie,Mcconnell,stephaniemcconnell@gmail.com,071 Lee Corner Apt. 521,East Olivia,Pennsylvania,65643,001-624-614-9342x06195
+29,Matthew,Pittman,matthewpittman@gmail.com,537 Webb Drive,Johnbury,Vermont,88571,+1-761-417-7896
+30,Alex,Gay,alexgay@gmail.com,179 Kelsey Keys,Bryantbury,North Carolina,66310,001-939-541-0976x452
+31,Scott,Goodman,scottgoodman@yahoo.com,8809 Morris Curve,Hammondmouth,Florida,71126,001-794-930-2964x294
+32,Barbara,Moreno,barbaramoreno@yahoo.com,780 Schultz Manor Suite 280,Kaylaland,Virginia,29706,311.644.6734x03049
+33,Dawn,Dawson,dawndawson@gmail.com,5212 Reyes Alley,East Kevinhaven,Nebraska,34095,+1-656-515-3202x60864
+34,Jessica,Henry,jessicahenry@hotmail.com,2704 Stephanie Courts,Port Carlfort,Texas,71994,001-453-966-0335x0250
+35,Loretta,Burnett,lorettaburnett@yahoo.com,95217 Welch Spring,Larsenport,Missouri,50496,254.506.5514x963
+36,Jennifer,Mccarthy,jennifermccarthy@gmail.com,95711 Johnson Island Suite 017,Francisborough,Rhode Island,67922,227-289-2553x0552
+37,William,Tucker,williamtucker@hotmail.com,555 Diaz Ridge,Lake Dianaburgh,Illinois,51142,933.558.1188x12740
+38,Darrell,Doyle,darrelldoyle@gmail.com,022 Rose Bridge,Harveymouth,Colorado,51526,533.801.1752
+39,Allen,Kerr,allenkerr@hotmail.com,183 Valerie Place Apt. 108,Kellyborough,Mississippi,23057,001-996-831-7517x986
+40,Melissa,Smith,melissasmith@hotmail.com,76620 Ashley Plaza,Caseyport,Arkansas,50003,001-267-293-4974x823
+41,Samuel,Edwards,samueledwards@yahoo.com,18434 Little Locks Suite 880,Garcialand,New Hampshire,98423,(939)805-2870x348
+42,Francisco,Cannon,franciscocannon@gmail.com,058 Steven Mount Apt. 591,West Ryanview,Vermont,32809,395-441-7470x4208
+43,Laura,Sanchez,laurasanchez@gmail.com,3269 James Course,Angelamouth,South Carolina,38224,+1-879-255-1634x6700
+44,Shane,Blair,shaneblair@gmail.com,147 Ford Hills,South Chad,South Carolina,25808,463-216-5429
+45,William,Bailey,williambailey@gmail.com,93608 Natalie Ports,Emilytown,Montana,59938,4082954487
+46,Aaron,Clark,aaronclark@gmail.com,37851 Wilson Ville,Robertville,Wyoming,58740,686-922-0932
+47,Laura,Martin,lauramartin@hotmail.com,648 Eric Ridges Suite 446,Mosleyhaven,Michigan,63062,5762808725
+48,Travis,Nelson,travisnelson@hotmail.com,652 Thomas Locks,Brianfort,Tennessee,80341,546-691-2662
+49,Jacob,Brown,jacobbrown@gmail.com,595 Ryan Walk Suite 266,Justintown,Hawaii,29719,789-588-4487x982
+50,Valerie,Burton,valerieburton@yahoo.com,6231 Wiggins Gardens Apt. 627,Lake Janice,New York,15120,(312)863-9141
+51,Jessica,Clark,jessicaclark@hotmail.com,71456 Ramirez Spring,Stevenhaven,South Dakota,56226,+1-876-480-9371
+52,Cassandra,Caldwell,cassandracaldwell@gmail.com,32403 Porter Terrace,Elizabethstad,Virginia,38244,800.390.3257x64766
+53,Sherri,Kane,sherrikane@hotmail.com,27602 Allison Lights Apt. 734,Marquezfort,Missouri,41209,209.945.5238x553
+54,Julia,Patterson,juliapatterson@yahoo.com,3777 Perez Estates,South Jackshire,Missouri,92384,(249)892-8467x8770
+55,Kenneth,Calhoun,kennethcalhoun@hotmail.com,35120 Patrick Glens,New Courtneyborough,Arkansas,41678,876-337-4009x473
+56,Robert,Bailey,robertbailey@gmail.com,05266 Natalie Centers,Tammyfurt,Kentucky,22017,588.867.6684x209
+57,Paul,Montes,paulmontes@yahoo.com,33146 Morrow Ridges Suite 937,West Amy,Utah,66798,001-588-370-0958
+58,Christina,Murray,christinamurray@yahoo.com,084 Nguyen Circle,Gordonborough,Mississippi,91695,(753)594-7939x531
+59,Sarah,Long,sarahlong@yahoo.com,7344 Nicholas Trafficway Apt. 562,Gonzaleshaven,Washington,25932,5889504944
+60,Sharon,Hanson,sharonhanson@hotmail.com,24891 Preston Point,New Kathy,South Carolina,37360,500-221-7754x2906
+61,Michelle,Owens,michelleowens@gmail.com,311 James Point,Matthewtown,Colorado,17693,+1-653-372-6656x486
+62,Sarah,Stewart,sarahstewart@gmail.com,9235 Angela Crescent,Andersonview,Kentucky,37016,001-831-780-4492
+63,Timothy,Williams,timothywilliams@yahoo.com,072 Davidson Club,South Pamelabury,Michigan,50184,+1-883-905-2494x6312
+64,Maria,Myers,mariamyers@gmail.com,4611 Lee Rapid,Lake Christopherburgh,Alaska,56679,(322)728-9346x49380
+65,Kevin,May,kevinmay@gmail.com,53679 Ellis Roads,Keyville,Florida,68739,(599)696-0653
+66,Michael,Washington,michaelwashington@yahoo.com,90290 Rebecca Brooks,West Timothy,Pennsylvania,64916,545.568.3145
+67,Diane,Norris,dianenorris@hotmail.com,57097 Douglas Center,Lake Linda,North Dakota,59321,246.956.4774
+68,Jose,Garcia,josegarcia@hotmail.com,060 Susan Cape Apt. 528,South Jasonmouth,Florida,81428,(888)416-5170
+69,Brianna,Shelton,briannashelton@gmail.com,121 Laura Summit Apt. 145,Lake Arthurburgh,Idaho,98872,286-261-0677x845
+70,Jenna,Thomas,jennathomas@yahoo.com,19277 Leon Vista Apt. 169,Holmesland,North Carolina,60954,2844699573
+71,Nancy,Jones,nancyjones@hotmail.com,82166 Lee Junctions Apt. 906,North Larry,South Carolina,49446,(323)939-4226x942
+72,Brian,Hogan,brianhogan@gmail.com,6581 Linda Centers Apt. 054,North Robertside,New Jersey,29677,(278)512-3224x945
+73,Daniel,Alvarez,danielalvarez@yahoo.com,0850 Shaffer Plaza Apt. 805,North Ronaldside,West Virginia,35351,621.250.7206
+74,Kelly,Smith,kellysmith@yahoo.com,876 Flores Summit,Crystalshire,Iowa,27034,434-770-7253
+75,Matthew,Johnson,matthewjohnson@hotmail.com,37599 Jessica Fork,West Tara,Ohio,79782,+1-817-325-5628
+76,Adam,Lewis,adamlewis@hotmail.com,621 Lindsey Streets Apt. 055,Geneshire,Hawaii,51742,8568911730
+77,Tina,Cohen,tinacohen@gmail.com,472 Stevens Rapid Apt. 140,Jessicaville,North Carolina,28455,+1-620-320-3021x741
+78,Kara,Thornton,karathornton@gmail.com,621 Matthew Park,South Jasonport,Missouri,71860,(513)455-7112
+79,Ashley,James,ashleyjames@yahoo.com,7701 Michael Tunnel Apt. 023,Robertstad,New Mexico,78018,(733)234-9380x774
+80,Amanda,Hernandez,amandahernandez@yahoo.com,76604 Berry Plain,East Rhondaborough,Washington,26431,+1-926-370-4965x56859
+81,Jose,Hart,josehart@yahoo.com,139 Robin Branch,South Cindymouth,Alabama,63554,001-412-765-3492x609
+82,Robert,Collier,robertcollier@gmail.com,4478 Matthew Common Suite 755,East Gregoryborough,Wisconsin,40951,941.460.2773
+83,Carol,Kramer,carolkramer@gmail.com,2014 Rogers Forge,South Kimberly,Arizona,73919,(475)750-8931
+84,Brenda,Howard,brendahoward@hotmail.com,6041 Hernandez Heights,North Rickybury,Arizona,88242,512-340-6767
+85,Daniel,Miller,danielmiller@hotmail.com,616 Lynn Well,Cardenasville,Iowa,78521,684.747.5231
+86,Laura,Rios,laurarios@gmail.com,94748 Jeffrey Pines Apt. 838,East Curtis,Georgia,67813,264-297-2912x65684
+87,David,Liu,davidliu@hotmail.com,32473 Anthony Views,Williamstown,Illinois,31865,256-907-6385x79227
+88,Alexander,Hernandez,alexanderhernandez@hotmail.com,510 Katrina Coves,West Cherylshire,Alaska,57052,715-388-4037x6138
+89,Michael,Castaneda,michaelcastaneda@hotmail.com,8844 Hughes Ports Apt. 892,South Elizabeth,Massachusetts,74428,(931)897-4416x1562
+90,Andrew,Adams,andrewadams@yahoo.com,61133 Young Spurs Suite 841,Mooreville,Connecticut,15770,310-487-2131x2291
+91,Norman,Hanna,normanhanna@hotmail.com,3066 Lynch Road Apt. 090,Port Donaldburgh,Mississippi,75395,+1-429-911-7841x553
+92,Gabriel,Williams,gabrielwilliams@yahoo.com,539 Amanda Creek,Lake Samantha,Michigan,70731,896.680.3605x4062
+93,Monica,Campbell,monicacampbell@yahoo.com,811 Brown Drive Suite 405,Mendezhaven,Idaho,80748,608.427.7438
+94,Sabrina,Reed,sabrinareed@yahoo.com,592 Sherry Pine,Brownfort,Maryland,42122,(658)645-7826x927
+95,Emma,Calderon,emmacalderon@gmail.com,7509 Chen Extensions,West Ashleyfort,Missouri,72241,001-456-400-2364
+96,Mariah,Wall,mariahwall@gmail.com,6139 Kimberly Street Apt. 125,Howardfort,New York,53638,371-837-4927x895
+97,Paul,Johnson,pauljohnson@gmail.com,1646 Sarah Islands,Shepherdtown,Delaware,60304,960.245.8250
+98,Kelly,Barry,kellybarry@gmail.com,6055 Catherine Motorway Suite 510,Lake Jeffside,New Mexico,46580,889.791.6150x50671
+99,David,Wright,davidwright@gmail.com,99586 Roberts Park Suite 338,Sanchezborough,South Dakota,84030,697.862.3557x988
+100,Nicole,Gray,nicolegray@gmail.com,943 Dean Streets,Blackstad,Arkansas,38913,(406)556-5000
