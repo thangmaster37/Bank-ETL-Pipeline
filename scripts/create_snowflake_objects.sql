@@ -16,4 +16,3 @@ create schema if not exists dbt_bank_db.raw_bank_schema;
 create schema if not exists dbt_bank_db.staging_bank_schema;
 create schema if not exists dbt_bank_db.intermediate_bank_schema;
 create schema if not exists dbt_bank_db.marts_bank_schema;
-
