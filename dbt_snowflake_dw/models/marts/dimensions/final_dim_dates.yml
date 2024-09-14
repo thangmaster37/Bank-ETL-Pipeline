@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: final_dim_dates
+    description: Chứa thông tin về ngày tháng mà khách hàng thực hiện một dịch vụ nào đó sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"date_id"'
+        description: Khóa khác nhau cho mỗi ngày được xác định
+        tests:
+          - not_null
+          - unique
+
+      - name: '"date"'
+        description: Thông tin đầy đủ về một ngày
+        tests:
+          - not_null
+          - unique
+          
+      - name: '"day"'
+        description: Ngày được xác định
+        tests:  
+          - not_null
+          - accepted_values:
+              values: [1,2,3,4,5,6,7,8,9,10,
+                       11,12,13,14,15,16,17,18,19,20,
+                       21,22,23,24,25,26,27,28,29,30,31]
+
+      - name: '"month"'          
+        description: Tháng được xác định
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1,2,3,4,5,6,7,8,9,10,11,12]
+
+      - name: '"year"'
+        description: Năm được xác định
+        tests:
+          - not_null
+          - accepted_values:
+              values: [2022,2023,2024]
+
+      - name: '"quarter"'
+        description: Qúy trong một năm được xác định
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1,2,3,4]
+
+      - name: '"weekday"'
+        description: Thứ của một ngày được xác định
+        tests:  
+          - not_null
+          - accepted_values:
+              values: [1,2,3,4,5,6,7]
+
+      

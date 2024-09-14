@@ -1,0 +1,78 @@
+version: 2
+
+models:
+  - name: final_fact_daily_balances
+    description: Chứa thông tin cụ thể về số dư tài khoản trong một khoảng thời gian nhất định sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"balance_id"'
+        description: Khóa khác nhau cho mỗi lần kiểm tra số dư tài khoản
+        tests:
+          - not_null
+          - unique
+
+      - name: '"date_id"'
+        description: Mã của ngày thực hiện kiểm tra số dư tài khoản
+        tests:  
+          - not_null
+          - relationships:
+              to: ref('final_dim_dates')
+              field: '"date_id"'
+
+      - name: '"date_balance"'
+        description: Ngày thực hiện kiểm tra số dư tài khoản
+        tests:  
+          - not_null
+
+      - name: '"account_id"'
+        description: Mã của tài khoản được thực hiện kiểm tra số dư
+        tests:
+          - not_null
+          - relationships:
+              to: ref('final_dim_accounts')
+              field: '"account_id"'
+
+      - name: '"account_balance"'
+        description: Số của tài khoản
+        tests:
+          - not_null
+
+      - name: '"account_type_balance"'
+        description: Kiểu tài khoản của mỗi tài khoản
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['checking', 'savings', 'loan', 'investment']
+
+      - name: '"currency_id"'
+        description: Mã của tiền tệ tài khoản được thực hiện kiểm tra số dư
+        tests:
+          - not_null
+          - relationships:
+              to: ref('final_dim_currencies')
+              field: '"currency_id"'
+
+      - name: '"currency_code_balance"'
+        description: Mã tiền tệ của tài khoản
+        tests:  
+          - not_null
+          - accepted_values:
+              values: ['usd', 'eur', 'jpy', 'vnd', 'gbp', 'cny', 'sgd']
+
+      - name: '"opening_balance"'
+        description: Số dư mở đầu của tài khoản tại thời điểm bắt đầu khoảng thời gian.
+        tests:
+          - not_null
+
+      - name: '"closing_balance"'
+        description: Số dư kết thúc của tài khoản tại thời điểm kết thúc khoảng thời gian.
+        tests:
+          - not_null
+
+      - name: '"average_balance"'
+        description: Số dư trung bình của tài khoản trong khoảng thời gian.
+        tests:
+          - not_null
+      
+          
+          
+      

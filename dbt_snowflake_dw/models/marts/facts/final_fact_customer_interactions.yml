@@ -1,0 +1,120 @@
+version: 2
+
+models:
+  - name: final_fact_customer_interactions
+    description: Chứa thông tin cụ thể về các tương tác với dịch vụ của khách hàng sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"interaction_id"'
+        description: Khóa khác nhau cho mỗi tương tác của khách hàng
+        tests:
+          - not_null
+          - unique
+
+      - name: '"date_id"'
+        description: Mã của ngày khách hàng thực hiện tương tác với dịch vụ
+        tests:  
+          - not_null
+          - relationships:
+              to: ref('final_dim_dates')
+              field: '"date_id"'
+
+      - name: '"date_interaction"'
+        description: Ngày khách hàng thực hiện tương tác với dịch vụ
+        tests:  
+          - not_null
+
+      - name: '"customer_id"'
+        description: Mã của khách hàng thực hiện tương tác với dịch vụ
+        tests:
+          - not_null
+          - relationships:
+              to: ref('final_dim_customers')
+              field: '"customer_id"'
+
+      - name: '"name_customer"'
+        description: Tên đầy đủ của khách hàng thực hiện tương tác với dịch vụ
+        tests:
+          - not_null
+          
+      - name: '"house_number_customer"'
+        description: Số nhà của khách hàng đang sinh sống
+        tests:  
+          - not_null
+
+      - name: '"street_name_customer"'
+        description: Tên đường mà khách hàng đang sinh sống
+        tests:
+          - not_null
+
+      - name: '"city_customer"'
+        description: Thành phố mà khách hàng đang sinh sống
+        tests:
+          - not_null
+
+      - name: '"state_customer"'
+        description: Tiểu bang mà khách hàng đang sinh sống
+        tests:
+          - not_null
+
+      - name: '"channel_id"'
+        description: Mã của kênh mà khách hàng thực hiện tương tác với dịch vụ
+        tests:
+          - not_null
+          - relationships:
+              to: ref('final_dim_channels')
+              field: '"channel_id"'
+
+      - name: '"channel_interaction"'
+        description: Tên của kênh giao dịch
+        tests:  
+          - not_null
+          - accepted_values:
+              values: ['online', 'mobile app', 'in-store', 'atm', 'telephone']
+
+      - name: '"location_id"'
+        description: Mã của địa điểm mà khách hàng thực hiện tương tác với dịch vụ
+        tests:
+          - not_null
+          - relationships:
+              to: ref('final_dim_locations')
+              field: '"location_id"'
+
+      - name: '"house_number_interaction"'
+        description: Số nhà của khách hàng đang thực hiện tương tác với dịch vụ
+        tests:  
+          - not_null
+
+      - name: '"street_name_interaction"'
+        description: Tên đường mà khách hàng đang thực hiện tương tác với dịch vụ
+        tests:
+          - not_null
+
+      - name: '"city_interaction"'
+        description: Thành phố mà khách hàng đang thực hiện tương tác với dịch vụ
+        tests:
+          - not_null
+
+      - name: '"state_interaction"'
+        description: Tiểu bang mà khách hàng đang thực hiện tương tác với dịch vụ
+        tests:
+          - not_null
+
+      - name: '"country_interaction"'
+        description: Đất nước mà khách hàng đang thực hiện tương tác với dịch vụ
+        tests:
+          - not_null
+
+      - name: '"interaction_type"'
+        description: Kiểu tương tác của khách hàng với dịch vụ
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['phone call', 'email', 'in-person', 'chat', 'social media']
+          
+      - name: '"interaction_rating"'
+        description: Điểm đánh giá tương tác của khách hàng dành cho dịch vụ
+        tests:
+          - not_null
+          
+          
+      

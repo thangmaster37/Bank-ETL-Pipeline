@@ -13,7 +13,7 @@ SELECT
     "location_id",
     "house_number",
     "street_name",
-    "apartment_suite"
+    "apartment_suite",
     "city",
     "state",
     "country",

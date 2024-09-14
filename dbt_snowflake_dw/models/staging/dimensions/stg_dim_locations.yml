@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: stg_dim_locations
+    description: Chứa thông tin về vị trí một giao dịch của khách hàng sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"location_id"'
+        description: Khóa khác nhau cho mỗi vị trí giao dịch
+        tests:
+          - not_null
+          - unique
+
+      - name: '"house_number"'
+        description: Số nhà nơi khách hàng thực hiện giao dịch
+        tests:  
+          - not_null
+
+      - name: '"street_name"'
+        description: Tên đường nơi mà khách hàng thực hiện giao dịch
+        tests:
+          - not_null
+
+      - name: '"apartment_suite"'
+        description: Số phòng nơi mà khách hàng thực hiện giao dịch(nếu ở trong các tòa nhà)
+
+      - name: '"city"'
+        description: Thành phố mà khách hàng đang thực hiện giao dịch
+        tests:
+          - not_null
+
+      - name: '"state"'
+        description: Tiểu bang mà khách hàng đang thực hiện giao dịch
+        tests:
+          - not_null
+
+      - name: '"country"'
+        description: Đất nước mà khách hàng đang thực hiện giao dịch
+        tests:
+          - not_null
+
+      - name: '"postal_code"'
+        description: Mã bưu chính nơi khách hàng đang thực hiện giao dịch
+        tests:
+          - not_null

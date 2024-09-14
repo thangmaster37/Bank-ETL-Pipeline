@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_dim_investment_types
+    description: Chứa thông tin về các loại hình đầu tư của ngân hàng sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"investment_type_id"'
+        description: Khóa khác nhau cho mỗi loại hình đầu tư
+        tests:
+          - not_null
+          - unique
+
+      - name: '"investment_type_name"'
+        description: Tên của loại hình đầu tư
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: ['key investment', 'happen investment', 'nation investment', 'power investment', 'special investment']
+          
+      

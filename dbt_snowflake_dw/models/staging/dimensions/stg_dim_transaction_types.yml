@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_dim_transaction_types
+    description: Chứa thông tin về các kiểu giao dịch của ngân hàng sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"transaction_type_id"'
+        description: Khóa khác nhau cho mỗi kiểu giao dịch
+        tests:
+          - not_null
+          - unique
+
+      - name: '"transaction_type_name"'
+        description: Tên của kiểu giao dịch
+        tests:  
+          - not_null
+          - unique
+          - accepted_values:
+              values: ['deposit', 'withdrawal', 'transfer', 'payment']
+
+      

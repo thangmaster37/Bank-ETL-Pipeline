@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_dim_channels
+    description: Chứa thông tin về các kênh giao dịch của ngân hàng sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"channel_id"'
+        description: Khóa khác nhau cho mỗi kênh giao dịch
+        tests:
+          - not_null
+          - unique
+          
+      - name: '"channel_name"'
+        description: Tên của kênh giao dịch
+        tests:  
+          - not_null
+          - unique
+          - accepted_values:
+              values: ['online', 'mobile app', 'in-store', 'atm', 'telephone']
+
+     

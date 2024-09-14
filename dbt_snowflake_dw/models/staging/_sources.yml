@@ -37,19 +37,19 @@ sources:
         description: Chứa thông tin về các kiểu giao dịch của ngân hàng
       # Mô tả bảng fact_customer_interactions
       - name: fact_customer_interactions
-        description: Chứa thông tin cụ thể về các tương tác với dịch vụ của khách hàng
+        description: Chứa thông tin cơ bản về các tương tác với dịch vụ của khách hàng
       # Mô tả bảng fact_daily_balances
       - name: fact_daily_balances
-        description: Chứa thông tin về số dư tài khoản trong một khoảng thời gian nhất định
+        description: Chứa thông tin cơ bản về số dư tài khoản trong một khoảng thời gian nhất định
       # Mô tả bảng fact_investments
       - name: fact_investments
-        description: Chứa thông tin về cụ thể về các giao dịch đầu tư
+        description: Chứa thông tin cơ bản về cụ thể về các giao dịch đầu tư
       # Mô tả bảng fact_loan_payments
       - name: fact_loan_payments
-        description: Chứa thông tin về cụ thể về các khoản vay
+        description: Chứa thông tin cơ bản về cụ thể về các khoản vay
       # Mô tả bảng fact_transactions
       - name: fact_transactions
-        description: Chứa thông tin cụ thể về một giao dịch của khách hàng
+        description: Chứa thông tin cơ bản về một giao dịch của khách hàng
 
 
 

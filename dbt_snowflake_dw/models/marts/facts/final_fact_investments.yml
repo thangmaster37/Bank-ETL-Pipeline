@@ -1,0 +1,73 @@
+version: 2
+
+models:
+  - name: final_fact_investments
+    description: Chứa thông tin cụ thể về các giao dịch đầu tư sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"investment_id"'
+        description: Khóa khác nhau cho mỗi khoản đầu tư
+        tests:
+          - not_null
+          - unique
+
+      - name: '"date_id"'
+        description: Mã của ngày thực hiện khoản đầu tư
+        tests:  
+          - not_null
+          - relationships:
+              to: ref('final_dim_dates')
+              field: '"date_id"'
+
+      - name: '"date_investment"'
+        description: Ngày thực hiện đầu tư
+        tests:  
+          - not_null
+
+      - name: '"investment_type_id"'
+        description: Mã của kiểu đầu tư của một khoản đầu tư nào đó
+        tests:
+          - not_null
+          - relationships:
+              to: ref('final_dim_investment_types')
+              field: '"investment_type_id"'
+
+      - name: '"investment_type_name"'
+        description: Tên của loại hình đầu tư
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['key investment', 'happen investment', 'nation investment', 'power investment', 'special investment']
+
+      - name: '"account_id"'
+        description: Mã của tài khoản thực hiện khoản đầu tư
+        tests:
+          - not_null
+          - relationships:
+              to: ref('final_dim_accounts')
+              field: '"account_id"'
+
+      - name: '"account_investment"'
+        description: Mỗi tài khoản có số tài khoản khác nhau
+        tests:  
+          - not_null
+
+      - name: '"account_type_investment"'
+        description: Kiểu tài khoản của mỗi tài khoản
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['checking', 'savings', 'loan', 'investment']
+
+      - name: '"amount_invested"'
+        description: Số tiền thực hiện cho khoản đầu tư
+        tests:
+          - not_null
+
+      - name: '"investment_return"'
+        description: Số tiền thu được sau khi kết thúc khoản đầu tư
+        tests:
+          - not_null
+      
+          
+          
+      

@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: stg_fact_investments
+    description: Chứa thông tin cơ bản về các giao dịch đầu tư sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"investment_id"'
+        description: Khóa khác nhau cho mỗi khoản đầu tư
+        tests:
+          - not_null
+          - unique
+
+      - name: '"date_id"'
+        description: Mã của ngày thực hiện khoản đầu tư
+        tests:  
+          - not_null
+          - relationships:
+              to: ref('stg_dim_dates')
+              field: '"date_id"'
+
+      - name: '"investment_type"'
+        description: Mã của kiểu đầu tư của một khoản đầu tư nào đó
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_investment_types')
+              field: '"investment_type_id"'
+
+      - name: '"account_id"'
+        description: Mã của tài khoản thực hiện khoản đầu tư
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_accounts')
+              field: '"account_id"'
+
+      - name: '"amount_invested"'
+        description: Số tiền thực hiện cho khoản đầu tư
+        tests:
+          - not_null
+
+      - name: '"investment_return"'
+        description: Số tiền thu được sau khi kết thúc khoản đầu tư
+        tests:
+          - not_null
+      
+          
+          
+      

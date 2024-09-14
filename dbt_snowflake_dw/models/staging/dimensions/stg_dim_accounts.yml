@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: stg_dim_accounts
+    description: Chứa thông tin về các loại tài khoản của các khách hàng, một khách hàng có thể có \
+                 nhiều loại tài khoản khác nhau trong một ngân hàng sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"account_id"'
+        description: Khóa khác nhau cho mỗi tài khoản
+        tests:
+          - not_null
+          - unique
+          
+      - name: '"account_number"'
+        description: Mỗi tài khoản có số tài khoản khác nhau
+        tests:  
+          - not_null
+          - unique
+
+      - name: '"customer_id"'
+        description: Tài khoản thuộc về một khách hàng nào đó
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_customers')
+              field: '"customer_id"'
+
+      - name: '"account_type"'
+        description: Kiểu tài khoản của mỗi tài khoảng
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['checking', 'savings', 'loan', 'investment']
+      
+      - name: '"account_balance"'
+        description: Số dư của tài khoảng
+        tests:
+          - not_null
+          
+      - name: '"credit_score"'
+        description: Điểm tín dụng của tài khoảng
+        tests:
+          - not_null
+

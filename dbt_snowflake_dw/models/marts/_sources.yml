@@ -50,15 +50,15 @@ sources:
     
       # Mô tả bảng stg_fact_daily_balances
       - name: stg_fact_daily_balances
-        description: Chứa thông tin về số dư tài khoản trong một khoảng thời gian nhất định sau khi đã được xử lý cơ bản
+        description: Chứa thông tin cụ thể về số dư tài khoản trong một khoảng thời gian nhất định sau khi đã được xử lý cơ bản
     
       # Mô tả bảng stg_fact_investments
       - name: stg_fact_investments
-        description: Chứa thông tin về cụ thể về các giao dịch đầu tư sau khi đã được xử lý cơ bản
+        description: Chứa thông tin cụ thể về các giao dịch đầu tư sau khi đã được xử lý cơ bản
     
       # Mô tả bảng stg_fact_loan_payments
       - name: stg_fact_loan_payments
-        description: Chứa thông tin về cụ thể về các khoản vay sau khi đã được xử lý cơ bản
+        description: Chứa thông tin cụ thể về các lần thanh toán khoản vay sau khi đã được xử lý cơ bản
     
       # Mô tả bảng stg_fact_transactions
       - name: stg_fact_transactions

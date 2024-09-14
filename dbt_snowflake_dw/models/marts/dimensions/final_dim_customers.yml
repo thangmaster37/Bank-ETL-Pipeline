@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: final_dim_customers
+    description: Chứa thông tin về khách hàng của ngân hàng sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"customer_id"'
+        description: Khóa khác nhau cho mỗi khách hàng
+        tests:
+          - not_null
+          - unique
+          
+      - name: '"first_name"'
+        description: Họ của khách hàng
+        tests:  
+          - not_null
+
+      - name: '"last_name"'          
+        description: Tên của khách hàng
+        tests:
+          - not_null
+
+      - name: '"full_name"'
+        description: Tên đầy đủ của khách hàng
+        tests:
+          - not_null
+
+      - name: '"email"'
+        description: Email cá nhân của khách hàng
+        tests:
+          - not_null
+
+      - name: '"house_number"'
+        description: Số nhà của khách hàng
+        tests:  
+          - not_null
+
+      - name: '"street_name"'
+        description: Tên đường mà khách hàng đang sinh sống
+        tests:
+          - not_null
+
+      - name: '"apartment_suite"'
+        description: Số phòng của khách hàng (nếu ở trong các tòa nhà)
+
+      - name: '"city"'
+        description: Thành phố mà khách hàng đang sinh sống
+        tests:
+          - not_null
+
+      - name: '"state"'
+        description: Tiểu bang mà khách hàng đang sinh sống
+        tests:
+          - not_null
+
+      - name: '"postal_code"'
+        description: Mã bưu chính của khách hàng
+        tests:
+          - not_null
+
+      - name: '"phone_number"'
+        description: Số điện thoại của khách hàng
+        tests:
+          - not_null
+          - unique
+
+
+
+     

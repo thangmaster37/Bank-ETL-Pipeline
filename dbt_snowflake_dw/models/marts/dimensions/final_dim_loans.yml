@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: final_dim_loans
+    description: Chứa thông tin về các khoản vay của khách hàng trong ngân hàng sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"loan_id"'
+        description: Khóa khác nhau cho mỗi khoản vay
+        tests:
+          - not_null
+          - unique
+
+      - name: '"loan_type"'
+        description: Các kiểu vay
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['business', 'education', 'home', 'personal', 'credit card', 'auto']
+
+      - name: '"loan_amount"'
+        description: Số tiền vay
+        tests:
+          - not_null
+
+      - name: '"interest_rate"'
+        description: Lãi suất của khoản vay
+        tests:
+          - not_null
+  
+          
+      

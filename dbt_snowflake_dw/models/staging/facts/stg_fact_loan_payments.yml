@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: stg_fact_loan_payments
+    description: Chứa thông tin cơ bản về các lần thanh toán khoản vay sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"payment_id"'
+        description: Khóa khác nhau cho mỗi khoản lần thanh toán khoản vay của khách hàng
+        tests:
+          - not_null
+          - unique
+
+      - name: '"date_id"'
+        description: Mã của ngày thực hiện thanh toán khoản vay
+        tests:  
+          - not_null
+          - relationships:
+              to: ref('stg_dim_dates')
+              field: '"date_id"'
+
+      - name: '"loan_id"'
+        description: Mã của khoản vay được thanh toán
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_loans')
+              field: '"loan_id"'
+
+      - name: '"customer_id"'
+        description: Mã của khách hàng thực hiện thanh toán khoản vay
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_customers')
+              field: '"customer_id"'
+
+      - name: '"payment_amount"'
+        description: Số tiền thanh toán cho khoản vay
+        tests:
+          - not_null
+
+      - name: '"payment_status"'
+        description: Trạng thái thanh toán khoản vay
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['completed', 'pending', 'failed', 'overdue']
+      
+          
+          
+      

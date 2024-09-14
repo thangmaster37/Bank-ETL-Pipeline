@@ -1,0 +1,99 @@
+version: 2
+
+models:
+  - name: stg_fact_transactions
+    description: Chứa thông tin cơ bản về một giao dịch của khách hàng sau khi đã được xử lý cơ bản
+    columns:
+      - name: '"transaction_id"'
+        description: Khóa khác nhau cho mỗi lần thực hiện giao dịch của khách hàng
+        tests:
+          - not_null
+          - unique
+
+      - name: '"customer_id"'
+        description: Mã của khách hàng thực hiện giao dịch
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_customers')
+              field: '"customer_id"'
+
+      - name: '"txn_date_id"'
+        description: Mã của ngày thực hiện giao dịch
+        tests:  
+          - not_null
+          - relationships:
+              to: ref('stg_dim_dates')
+              field: '"date_id"'
+
+      - name: '"channel_id"'
+        description: Mã của kênh mà khách hàng thực hiện giao dịch
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_channels')
+              field: '"channel_id"'
+
+      - name: '"account_id"'
+        description: Mã của tài khoản thực hiện giao dịch
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_accounts')
+              field: '"account_id"'
+
+      - name: '"txn_type_id"'
+        description: Mã của kiểu giao dịch
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_transaction_types')
+              field: '"transaction_type_id"'
+
+      - name: '"location_id"'
+        description: Mã của địa điểm mà khách hàng thực hiện giao dịch
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_locations')
+              field: '"location_id"'
+
+      - name: '"currency_id"'
+        description: Mã của tiền tệ tài khoản thực hiện giao dịch
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_currencies')
+              field: '"currency_id"'
+
+      - name: '"loan_id"'
+        description: Mã của khoản vay đang thực hiện giao dịch
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_loans')
+              field: '"loan_id"'
+
+      - name: '"investment_type_id"'
+        description: Mã của kiểu đầu tư đang thực hiện giao dịch
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_dim_investment_types')
+              field: '"investment_type_id"'
+
+      - name: '"txn_amount"'
+        description: Số tiền được giao dịch
+        tests:
+          - not_null
+
+      - name: '"txn_status"'
+        description: Trạng thái của giao dịch
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['completed', 'pending', 'failed', 'cancelled']
+      
+          
+          
+      
