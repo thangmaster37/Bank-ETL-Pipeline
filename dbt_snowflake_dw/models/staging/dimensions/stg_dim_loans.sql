@@ -4,7 +4,6 @@
     config(
         materialized='incremental',
         alias='stg_dim_loans',
-        schema=var('staging_bank_schema'),
         unique_key='loan_id',
         incremental_strategy='delete+insert'
     )
@@ -19,7 +18,7 @@ WITH new_dim_loans AS (
         ) AS "rank_loan"
 
     FROM 
-        {{ source('staging_snowflake', 'dim_loans') }}
+        {{ source('raw_snowflake', 'dim_loans') }}
 )
 
 SELECT

@@ -4,7 +4,6 @@
     config(
         materialized='incremental',
         alias='stg_dim_accounts',
-        schema=var('staging_bank_schema'),
         unique_key='account_id',
         incremental_strategy='delete+insert'
     )
@@ -22,7 +21,7 @@ WITH new_dim_accounts AS (
         ) AS "rank_account"
 
     FROM 
-        {{ source('staging_snowflake', 'dim_accounts') }}
+        {{ source('raw_snowflake', 'dim_accounts') }}
 )
 
 SELECT 
@@ -37,11 +36,12 @@ FROM
     new_dim_accounts AS "account"
 
 INNER JOIN 
-    {{ source('staging_snowflake', 'dim_customers') }} AS "customer" 
+    {{ source('raw_snowflake', 'dim_customers') }} AS "customer" 
     ON "account"."customer_id" = "customer"."customer_id"
 
 WHERE -- Loại bỏ các record chứa giá trị NULL
-      "account_number" IS NOT NULL
+      "account_id" IS NOT NULL
+  AND "account_number" IS NOT NULL
   AND "account"."customer_id" IS NOT NULL
   AND "account_type" IS NOT NULL
   AND "account_balance" IS NOT NULL

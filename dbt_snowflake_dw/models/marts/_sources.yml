@@ -2,7 +2,7 @@ version: 2
 
 # Mô tả nguồn dữ liệu đầu vào trong schema staging_bank_schema
 sources:
-  - name: marts_snowflake
+  - name: staging_snowflake
     description: Financial data for the Moduck Bank
     database: dbt_bank_db
     schema: staging_bank_schema

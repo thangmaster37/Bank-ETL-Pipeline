@@ -4,7 +4,6 @@
     config(
         materialized='incremental',
         alias='stg_dim_channels',
-        schema=var('staging_bank_schema'),
         unique_key='channel_id',
         incremental_strategy='delete+insert'
     )
@@ -19,7 +18,7 @@ WITH new_dim_channels AS (
         ) AS "rank_channel"
 
     FROM 
-        {{ source('staging_snowflake', 'dim_channels') }}
+        {{ source('raw_snowflake', 'dim_channels') }}
 )
 
 SELECT

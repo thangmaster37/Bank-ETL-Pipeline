@@ -4,7 +4,6 @@
     config(
         materialized='incremental',
         alias='stg_fact_investments',
-        schema=var('staging_bank_schema'),
         unique_key='investment_id',
         incremental_strategy='delete+insert'
     )
@@ -19,7 +18,7 @@ WITH new_fact_investments AS (
         ) AS "rank_investment"
 
     FROM 
-        {{ source('staging_snowflake', 'fact_investments') }}
+        {{ source('raw_snowflake', 'fact_investments') }}
 )
 
 SELECT
@@ -33,9 +32,9 @@ SELECT
 FROM 
     new_fact_investments AS "investment"
 
-    {{ inner_join_id("staging_snowflake", "dim_dates", "investment", "date", "date_id", "date_id") }}
-    {{ inner_join_id("staging_snowflake", "dim_investment_types", "investment", "investment_type", "investment_type", "investment_type_id") }}
-    {{ inner_join_id("staging_snowflake", "dim_accounts", "investment", "account", "account_id", "account_id") }}
+    {{ inner_join_id("raw_snowflake", "dim_dates", "investment", "date", "date_id", "date_id") }}
+    {{ inner_join_id("raw_snowflake", "dim_investment_types", "investment", "investment_type", "investment_type", "investment_type_id") }}
+    {{ inner_join_id("raw_snowflake", "dim_accounts", "investment", "account", "account_id", "account_id") }}
 
 WHERE -- Loại bỏ các record chứa giá trị NULL
       "investment"."investment_id" IS NOT NULL

@@ -1,6 +1,6 @@
 dbt_snowflake_dw:
   outputs:
-    dev:
+    raw:
       account: ynb77459.us-east-1
       database: dbt_bank_db
       password: Thang@2003
@@ -10,4 +10,29 @@ dbt_snowflake_dw:
       type: snowflake
       user: thangmaster2003
       warehouse: "dbt_bank_warehouse"
-  target: dev
+
+    staging:
+      account: ynb77459.us-east-1
+      database: dbt_bank_db
+      password: Thang@2003
+      role: dbt_bank_role
+      schema: staging_bank_schema
+      threads: 10
+      type: snowflake
+      user: thangmaster2003
+      warehouse: "dbt_bank_warehouse"
+
+    final:
+      account: ynb77459.us-east-1
+      database: dbt_bank_db
+      password: Thang@2003
+      role: dbt_bank_role
+      schema: marts_bank_schema
+      threads: 10
+      type: snowflake
+      user: thangmaster2003
+      warehouse: "dbt_bank_warehouse"
+
+  target: raw
+
+  

@@ -2,7 +2,7 @@ version: 2
 
 # Mô tả nguồn dữ liệu đầu vào trong schema raw_bank_schema
 sources:
-  - name: staging_snowflake
+  - name: raw_snowflake
     description: Financial data for the Moduck Bank
     database: dbt_bank_db
     schema: raw_bank_schema

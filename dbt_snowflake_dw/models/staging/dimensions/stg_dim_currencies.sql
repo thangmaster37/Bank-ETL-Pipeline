@@ -4,7 +4,6 @@
     config(
         materialized='incremental',
         alias='stg_dim_currencies',
-        schema=var('staging_bank_schema'),
         unique_key='currency_id',
         incremental_strategy='delete+insert'
     )
@@ -19,7 +18,7 @@ WITH new_dim_currencies AS (
         ) AS "rank_currency"
 
     FROM 
-        {{ source('staging_snowflake', 'dim_currencies') }}
+        {{ source('raw_snowflake', 'dim_currencies') }}
 )
 
 SELECT

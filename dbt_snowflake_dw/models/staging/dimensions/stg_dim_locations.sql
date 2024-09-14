@@ -4,7 +4,6 @@
     config(
         materialized='incremental',
         alias='stg_dim_locations',
-        schema=var('staging_bank_schema'),
         unique_key='location_id',
         incremental_strategy='delete+insert'
     )
@@ -23,7 +22,7 @@ WITH new_dim_locations AS (
         ) AS "rank_location"
 
     FROM 
-        {{ source('staging_snowflake', 'dim_locations') }}
+        {{ source('raw_snowflake', 'dim_locations') }}
 )
 
 SELECT

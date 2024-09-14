@@ -3,6 +3,8 @@ Welcome to your new dbt project!
 ### Using the starter project
 
 Try running the following commands:
+- dbt seed
+- dbt compile
 - dbt run
 - dbt test
 

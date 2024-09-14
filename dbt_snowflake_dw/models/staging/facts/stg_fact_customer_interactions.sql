@@ -4,7 +4,6 @@
     config(
         materialized='incremental',
         alias='stg_fact_customer_interactions',
-        schema=var('staging_bank_schema'),
         unique_key='interaction_id',
         incremental_strategy='delete+insert'
     )
@@ -19,7 +18,7 @@ WITH new_fact_customer_interactions AS (
         ) AS "rank_customer_interaction"
 
     FROM 
-        {{ source('staging_snowflake', 'fact_customer_interactions') }}
+        {{ source('raw_snowflake', 'fact_customer_interactions') }}
 )
 
 SELECT
@@ -34,25 +33,25 @@ SELECT
 FROM 
     new_fact_customer_interactions AS "interaction"
 
-    {{ inner_join_id("staging_snowflake", "dim_dates", "interaction", "date", "date_id", "date_id") }}
-    {{ inner_join_id("staging_snowflake", "dim_channels", "interaction", "channel", "channel_id", "channel_id") }}
-    {{ inner_join_id("staging_snowflake", "dim_locations", "interaction", "location", "location_id", "location_id") }}
-    {{ inner_join_id("staging_snowflake", "dim_customers", "interaction", "customer", "customer_id", "customer_id") }}
+    {{ inner_join_id("raw_snowflake", "dim_dates", "interaction", "date", "date_id", "date_id") }}
+    {{ inner_join_id("raw_snowflake", "dim_channels", "interaction", "channel", "channel_id", "channel_id") }}
+    {{ inner_join_id("raw_snowflake", "dim_locations", "interaction", "location", "location_id", "location_id") }}
+    {{ inner_join_id("raw_snowflake", "dim_customers", "interaction", "customer", "customer_id", "customer_id") }}
 
     -- INNER JOIN 
-    --     {{ source('staging_snowflake', 'dim_dates') }} AS "date"
+    --     {{ source('raw_snowflake', 'dim_dates') }} AS "date"
     --     ON "interaction"."date_id" = "date"."date_id"
 
     -- INNER JOIN 
-    --     {{ source('staging_snowflake', 'dim_channels') }} AS "channel"
+    --     {{ source('raw_snowflake', 'dim_channels') }} AS "channel"
     --     ON "interaction"."channel_id" = "channel"."channel_id"
 
     -- INNER JOIN 
-    --     {{ source('staging_snowflake', 'dim_locations') }} AS "location"
+    --     {{ source('raw_snowflake', 'dim_locations') }} AS "location"
     --     ON "interaction"."location_id" = "location"."location_id"
 
     -- INNER JOIN 
-    --     {{ source('staging_snowflake', 'dim_channels') }} AS "channel"
+    --     {{ source('raw_snowflake', 'dim_channels') }} AS "channel"
     --     ON "interaction"."channel_id" = "channel"."channel_id"
 
 WHERE -- Loại bỏ các record chứa giá trị NULL

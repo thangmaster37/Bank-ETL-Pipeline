@@ -4,7 +4,6 @@
     config(
         materialized='incremental',
         alias='stg_fact_daily_balances',
-        schema=var('staging_bank_schema'),
         unique_key='balance_id',
         incremental_strategy='delete+insert'
     )
@@ -19,7 +18,7 @@ WITH new_fact_daily_balances AS (
         ) AS "rank_daily_balance"
 
     FROM 
-        {{ source('staging_snowflake', 'fact_daily_balances') }}
+        {{ source('raw_snowflake', 'fact_daily_balances') }}
 )
 
 SELECT
@@ -34,9 +33,9 @@ SELECT
 FROM 
     new_fact_daily_balances AS "balance"
 
-    {{ inner_join_id("staging_snowflake", "dim_dates", "balance", "date", "date_id", "date_id") }}
-    {{ inner_join_id("staging_snowflake", "dim_accounts", "balance", "account", "account_id", "account_id") }}
-    {{ inner_join_id("staging_snowflake", "dim_currencies", "balance", "currency", "currency_id", "currency_id") }}
+    {{ inner_join_id("raw_snowflake", "dim_dates", "balance", "date", "date_id", "date_id") }}
+    {{ inner_join_id("raw_snowflake", "dim_accounts", "balance", "account", "account_id", "account_id") }}
+    {{ inner_join_id("raw_snowflake", "dim_currencies", "balance", "currency", "currency_id", "currency_id") }}
 
 WHERE -- Loại bỏ các record chứa giá trị NULL
       "balance"."balance_id" IS NOT NULL

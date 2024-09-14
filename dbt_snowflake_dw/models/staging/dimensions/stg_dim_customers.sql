@@ -4,7 +4,6 @@
     config(
         materialized='incremental',
         alias='stg_dim_customers',
-        schema=var('staging_bank_schema'),
         unique_key='customer_id',
         incremental_strategy='delete+insert'
     )
@@ -19,7 +18,7 @@ WITH new_dim_customers AS (
         ) AS "rank_customer"
 
     FROM 
-        {{ source('staging_snowflake', 'dim_customers') }}
+        {{ source('raw_snowflake', 'dim_customers') }}
 )
 
 SELECT
