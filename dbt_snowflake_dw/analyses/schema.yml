@@ -1,0 +1,15 @@
+version: 2
+
+# Mô tả nguồn dữ liệu đầu vào cho việc phân tích dữ liệu
+sources:
+  - name: final_snowflake
+    description: Financial data for the Moduck Bank
+    database: dbt_bank_db
+    schema: marts_bank_schema
+    tables:
+      - name: final_fact_customer_interactions
+      - name: final_fact_daily_balances
+      - name: final_fact_investments
+      - name: final_fact_loan_payments
+      - name: final_fact_transactions
+      
