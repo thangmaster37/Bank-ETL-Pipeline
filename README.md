@@ -23,11 +23,13 @@ After running successfully, kafka and Airflow have been built on docker. Next, w
 
 Now let's start running Kafka and Airflow to send data to Snowflake and transform the data with Dbt:
 
-- Run Apache Kafka: 
-  - Di chuyển đến thu
+- Run Apache Kafka:
+  - Move to the "airflow" directory and run: <strong>docker-compose up</strong>
+  - Move to the "spark streaming/connection" directory and run: <strong>python consumer_bank.py</strong>
+  - Move to the "kafka/connection" directory and run: <strong>python producer_bank.py</strong>
 
-Run: dbt compile --models staging.dimensions.stg_dim_accounts / dbt compile --models staging
-Run: dbt run --models staging / dbt run --select models/staging/dimensions/stg_dim_accounts.sql
+- Run Apache Airflow:
+  - Move to the "airflow" directory and run: <strong>docker-compose up</strong>
 
 ### ✅ 5.FINAL RESULT
 - Data pipeline for my project
