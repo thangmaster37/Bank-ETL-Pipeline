@@ -18,11 +18,11 @@ def create_topic():
         client_id='admin-permission'
     )
 
-    admin_client.delete_topics(['fact-customer-interaction', 
-                                'fact-daily-balance', 
-                                'fact-investment',
-                                'fact-loan-payment',
-                                'fact-transaction'])
+    # admin_client.delete_topics(['fact-customer-interaction', 
+    #                             'fact-daily-balance', 
+    #                             'fact-investment',
+    #                             'fact-loan-payment',
+    #                             'fact-transaction'])
 
     # Tạo các topic
     topic_list = [NewTopic(name="fact-customer-interaction", num_partitions=2, replication_factor=1),
