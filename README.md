@@ -14,7 +14,8 @@ In this project, I build a data pipeline with data sent in real time and use DBT
 ### 🔥 4.SET UP AND RUN
 
 Due to hardware limitations in my computer, in this project I built kafka and airflow at the same time. First run move to the "airflow" directory and run: 
-<center><strong>docker-compose up -d --build</strong></center>
+
+<p align="center"><strong>docker-compose up -d --build</strong></p>
 
 - 
 
